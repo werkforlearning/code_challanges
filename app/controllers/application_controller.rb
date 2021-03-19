@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     end
 
     def require_user_logged_out!
-        redirect_to root_path if Current.user
+        redirect_to sign_in_path if Current.user
     end
 
 end
