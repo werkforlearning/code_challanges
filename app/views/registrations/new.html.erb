@@ -1,0 +1,26 @@
+<div class="mt-5">
+
+    <h4 class="mb-4"> Registration Form</h4>
+
+    <%= form_with model: @user, url: sign_up_path do |form| %>
+    <%= render "shared/form-error", form: form %>
+    <div class="card">
+        <div class="card-header">Fill your data</div>
+        <div class="card-body">
+            <div class="mb-3">
+                <%= form.label :email, class: "form-label" %>
+                <%= form.text_field :email, class: "form-control" %>
+            </div>
+            <div class="mb-3">
+                <%= form.label :password, class: "form-label" %>
+                <%= form.password_field :password, class: "form-control" %>
+            </div>
+            <div class="mb-3">
+                <%= form.label :password_confirmation, class: "form-label" %>
+                <%= form.password_field :password_confirmation, class: "form-control" %>
+            </div>
+            <%= form.submit "Register", class: "btn btn-primary" %>
+        </div>
+    </div>
+    <% end %>
+</div>
