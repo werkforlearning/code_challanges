@@ -1,0 +1,19 @@
+<h4>Login Form</h4>
+
+
+<div class="card">
+    <div class="card-header">Fill your credentials</div>
+    <div class="card-body">
+        <%= form_with url: sign_in_path do |form| %>
+        <div class="mb-3">
+            <%= form.label :email, class: "form-label" %>
+            <%= form.text_field :email, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+            <%= form.label :password, class: "form-label" %>
+            <%= form.password_field :password, class: "form-control" %>
+        </div>
+        <%= form.submit "Login", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>
