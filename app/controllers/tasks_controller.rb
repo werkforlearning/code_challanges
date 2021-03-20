@@ -3,8 +3,7 @@ class TasksController < ApplicationController
     before_action :set_task, only: [:update, :destroy]
 
     def index
-        @tasks = Current.user.tasks.order(params[:sort])
-        @tasks_count = Current.user.tasks.count
+        @tasks = Current.user.tasks.order(params[:sort]).to_a
     end
 
     def new
