@@ -1,0 +1,24 @@
+<h1>Create Task</h1>
+<div class="card">
+  <div class="card-header">Task</div>
+  <div class="card-body">
+    <%= form_with model: @task do |form| %>
+      <%= render "shared/form-error", form: form %>
+      <div class="mb-3">
+        <%= form.label :description, class: "form-label" %>
+        <%= form.text_field :description, class: "form-control"  %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :due_date, class: "form-label" %>
+        <div class="form-control">
+          <%= form.date_select :due_date %>
+        </div>
+      </div>
+      <div class="mb-3">
+        <%= form.label :priority, class: "form-label" %>
+        <%= form.select :priority, [["Low", "Low"], ["High", "High"]], {}, {class: "form-select"}%>
+      </div>
+      <%= form.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

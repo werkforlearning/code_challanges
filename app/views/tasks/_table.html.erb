@@ -1,0 +1,33 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col"><%= link_to "Description", :sort => "description" %></th>
+            <th scope="col"><%= link_to "Due Date", :sort => "due_date" %></th>
+            <th scope="col"><%= link_to "Priority", :sort => "priority" %></th>
+            <th scope="col"><%= link_to "Status", :sort => "status" %></th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @tasks.each do |task| %>
+            <tr class="<%= "bg-warning" if task.due_date == Date.today && task.status == "New"%>">
+                <td><%= task.description %></td>
+                <td><%= task.due_date %></td>
+                <td><%= task.priority %></td>
+                <td><%= task.status %></td>
+                <% if task.status == "New" %>
+                    <td class="d-flex align-items-center">
+                    <div class="mx-2">
+                        <%= button_to "Mark as Complete", task_path(task.id), method: :patch, class: "btn btn-primary", data: {confirm: "Mark #{task.description} as complete ?"} %>
+                    </div>
+                    <div>
+                        <%= button_to "Delete", task_path(task.id), method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure to delete #{task.description} ?"} %>
+                    </div>
+                    </td>
+                <% else %>
+                    <td> - </td>
+                <% end %>
+            </tr>
+        <% end %>
+    </tbody>
+</table
