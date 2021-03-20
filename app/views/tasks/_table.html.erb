@@ -1,10 +1,10 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col"><%= link_to "Description", :sort => "description" %></th>
-            <th scope="col"><%= link_to "Due Date", :sort => "due_date" %></th>
-            <th scope="col"><%= link_to "Priority", :sort => "priority" %></th>
-            <th scope="col"><%= link_to "Status", :sort => "status" %></th>
+            <th scope="col"><%= sortable "description" %></th>
+            <th scope="col"><%= sortable "due_date" %></th>
+            <th scope="col"><%= sortable "priority" %></th>
+            <th scope="col"><%= sortable "status" %></th>
             <th scope="col">Action</th>
         </tr>
     </thead>
