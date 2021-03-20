@@ -2,7 +2,7 @@
   <h1>Task</h1>
   <%= button_to "Create Task", new_task_path, method: :get, class: "btn btn-primary" %>
 </div>
-<% if @tasks_count > 0 %>
+<% if @tasks.count > 0 %>
   <%= render "table", tasks: @tasks %>
 <% else %>
   <%= "You don't have any task" %>
